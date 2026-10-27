@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+:host {
+  display: block;
+}
+
+.field-label {
+  font-family: $primary-font;
+  font-weight: bold;
+}

@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.text-input {
+  font-family: $primary-font;
+  border-radius: 10mm;
+
+  &:focus {
+    border-color: $brand-color;
+    box-shadow: none;
+  }
+}

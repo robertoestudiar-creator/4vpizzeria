@@ -1,0 +1,4 @@
+<button type="button" class="navbar-button" [class.is-active]="active()" [attr.aria-pressed]="active()"
+  [style.--color]="color()" (click)="onClick()">
+  {{ label() }}
+</button>

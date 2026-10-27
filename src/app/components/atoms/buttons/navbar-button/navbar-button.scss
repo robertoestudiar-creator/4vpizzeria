@@ -1,0 +1,32 @@
+@use 'bootstrap/scss/bootstrap';
+@use 'variables' as *;
+@use 'sass:color';
+
+.navbar-button {
+  @extend .btn;
+  @extend .btn-primary;
+
+  color: red;
+  font-family: $primary-font;
+  border-radius: 10mm;
+  background-color: white;
+  border: none;
+
+  &:hover {
+    background-color: color.adjust($brand-color, $lightness: -20%);
+  }
+
+  &:active {
+    animation: button-press $button-press-duration ease;
+    background-color: color.adjust($brand-color, $lightness: -10%);
+  }
+
+  &.is-active,
+  &.is-active:hover {
+    background-color: color.adjust($brand-color, $lightness: -10%);
+    color: white;
+  }
+
+  --bs-btn-active-bg: #{$brand-color};
+  --bs-btn-hover-border-color: #{$brand-color};
+}

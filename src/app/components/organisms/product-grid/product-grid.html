@@ -1,0 +1,8 @@
+<div class="product-grid container py-5">
+    <div class="row g-4 align-items-center">
+        <app-search-bar />
+        @for (product of visibleProducts(); track product.name) {
+            <app-product-card class="col-12 col-md-6 col-lg-4" [product]="product" />
+        }
+    </div>
+</div>
