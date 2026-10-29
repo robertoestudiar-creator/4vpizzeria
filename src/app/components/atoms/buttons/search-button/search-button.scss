@@ -2,31 +2,31 @@
 @use 'variables' as *;
 @use 'sass:color';
 
-.search-button {
-  @extend .btn;
-  @extend .btn-primary;
+:host {
+  display: flex;
+}
 
-  color: red;
-  font-family: $primary-font;
-  border-radius: 10mm;
-  background-color: white;
-  border: none;
+.search-button {
+
+  display: inline-flex;
+  justify-content: center;
+  width: 45px;
+  display: inline-flex;
+  align-items: center;
+  color: $brand-color;
+  background-color: var(--bs-body-bg);
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-left: none;
+  border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
 
   &:hover {
-    background-color: color.adjust($brand-color, $lightness: -20%);
+    background-color: color.adjust(white, $lightness: -20%);
+    color: color.adjust($brand-color, $lightness: -20%);
   }
 
-  &:active {
-    animation: button-press $button-press-duration ease;
-    background-color: color.adjust($brand-color, $lightness: -10%);
-  }
+  &:active{ 
+    background-color: color.adjust(white, $lightness: -30%);
+    color: color.adjust($brand-color, $lightness: -30%);
 
-  &.is-active,
-  &.is-active:hover {
-    background-color: color.adjust($brand-color, $lightness: -10%);
-    color: white;
   }
-
-  --bs-btn-active-bg: #{$brand-color};
-  --bs-btn-hover-border-color: #{$brand-color};
 }
