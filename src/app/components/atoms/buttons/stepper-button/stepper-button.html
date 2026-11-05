@@ -1,0 +1,4 @@
+<button type="button" class="btn stepper-button" [attr.aria-label]="ariaLabel()" [disabled]="locked() || disabled()"
+  (click)="onClick()">
+  {{ label() }}
+</button>
