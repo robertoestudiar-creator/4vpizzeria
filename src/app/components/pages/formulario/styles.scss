@@ -1,0 +1,21 @@
+@use 'main' as *;
+
+$formulario-gap: 1rem;
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: $formulario-gap;
+}
+
+.back-link,
+.thanks {
+  font-family: $primary-font;
+  border-radius: $radius-pill;
+  align-self: flex-start;
+}
+
+.thanks {
+  align-self: stretch;
+  margin: 0;
+}
