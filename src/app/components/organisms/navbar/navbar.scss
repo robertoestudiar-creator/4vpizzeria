@@ -1,17 +1,9 @@
 @use 'main' as *;
 
-.page-tab {
-  color: $light-color-dark;
-
-  &:hover,
-  &.active {
-    color: $light-color;
-  }
-
-  &.active {
-    font-weight: bold;
-    text-decoration: underline;
-  }
+.back-button {
+  border-radius: $radius-pill;
+  color: $brand-color;
+  font-weight: bold;
 }
 
 $navbar-search-width: 260px;

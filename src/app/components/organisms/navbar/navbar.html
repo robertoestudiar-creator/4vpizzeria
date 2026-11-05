@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <div class="navbar-nav flex-row gap-3">
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-                class="nav-link page-tab">Listado</a>
-            <a routerLink="/formulario" routerLinkActive="active" class="nav-link page-tab">Pedido</a>
-        </div>
+        @if (!showFilters()) {
+        <a routerLink="/" class="btn btn-light back-button">← Volver a la carta</a>
+        }
         <div class="order-lg-last ms-auto me-3 me-lg-0">
             <app-cart-button [count]="cartCount()" />
         </div>
