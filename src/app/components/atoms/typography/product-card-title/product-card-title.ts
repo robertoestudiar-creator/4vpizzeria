@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-product-card-title',
@@ -8,10 +8,4 @@ import { Component, input, output } from '@angular/core';
 
 export class ProductCardTitle {
   text = input.required<string>();
-  color = input<string>('#d62828');
-  clicked = output<void>();
-
-  onClick(): void {
-    this.clicked.emit();
-  }
 }

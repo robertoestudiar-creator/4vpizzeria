@@ -8,8 +8,6 @@ import { Component, input, output } from '@angular/core';
 
 export class SearchButton {
   label = input.required<string>();
-  color = input<string>('#d62828');
-  active = input<boolean>(false);
   clicked = output<void>();
 
   onClick(): void {
