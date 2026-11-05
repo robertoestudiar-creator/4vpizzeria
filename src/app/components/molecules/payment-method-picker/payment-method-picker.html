@@ -4,7 +4,5 @@
     <app-radio-option [inputId]="'payment-' + option.id" name="payment-method" [label]="option.label"
         [checked]="method() === option.id" (selected)="selectMethod(option.id)" />
     }
-    @if (error()) {
-    <app-error-message [text]="error()" />
-    }
+    <ng-content />
 </fieldset>

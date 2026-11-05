@@ -1,15 +1,59 @@
 <form class="card delivery-form" [formGroup]="form" (ngSubmit)="pay()" novalidate>
     <h2 class="delivery-form-title">Datos de entrega</h2>
-    <app-form-field label="Hora de entrega" inputId="time" type="time" [control]="form.controls.time"
-        [error]="errorFor('time')" />
-    <app-form-field label="Dirección completa" inputId="address" [control]="form.controls.address"
-        [error]="errorFor('address')" />
-    <app-payment-method-picker [method]="form.controls.paymentMethod.value" [error]="errorFor('paymentMethod')"
-        (methodChange)="selectMethod($event)" />
-    <app-form-field label="Número de tarjeta" inputId="card" [control]="form.controls.card"
-        [error]="errorFor('card')" />
-    <app-form-field label="Móvil" inputId="phone" type="tel" [control]="form.controls.phone"
-        [error]="errorFor('phone')" />
+
+    <app-form-field label="Hora de entrega" inputId="time" type="time" [control]="time"
+        [invalid]="time.invalid && (time.dirty || time.touched)">
+        @if (time.invalid && (time.dirty || time.touched)) {
+        @if (time.hasError('required')) {
+        <app-error-message text="La hora de entrega es obligatoria" />
+        }
+        @if (time.hasError('pattern')) {
+        <app-error-message text="La hora tiene que tener el formato HH:MM" />
+        }
+        }
+    </app-form-field>
+
+    <app-form-field label="Dirección completa" inputId="address" [control]="address"
+        [invalid]="address.invalid && (address.dirty || address.touched)">
+        @if (address.invalid && (address.dirty || address.touched)) {
+        @if (address.hasError('required')) {
+        <app-error-message text="La dirección es obligatoria" />
+        }
+        }
+    </app-form-field>
+
+    <app-payment-method-picker [method]="paymentMethod.value" (methodChange)="selectMethod($event)">
+        @if (paymentMethod.invalid && (paymentMethod.dirty || paymentMethod.touched)) {
+        @if (paymentMethod.hasError('required')) {
+        <app-error-message text="Elige un método de pago" />
+        }
+        }
+    </app-payment-method-picker>
+
+    <app-form-field label="Número de tarjeta" inputId="card" [control]="card"
+        [invalid]="card.invalid && (card.dirty || card.touched)">
+        @if (card.invalid && (card.dirty || card.touched)) {
+        @if (card.hasError('required')) {
+        <app-error-message text="El número de tarjeta es obligatorio" />
+        }
+        @if (card.hasError('pattern')) {
+        <app-error-message text="La tarjeta tiene que tener 16 dígitos" />
+        }
+        }
+    </app-form-field>
+
+    <app-form-field label="Móvil" inputId="phone" type="tel" [control]="phone"
+        [invalid]="phone.invalid && (phone.dirty || phone.touched)">
+        @if (phone.invalid && (phone.dirty || phone.touched)) {
+        @if (phone.hasError('required')) {
+        <app-error-message text="El móvil es obligatorio" />
+        }
+        @if (phone.hasError('pattern')) {
+        <app-error-message text="El móvil tiene que tener 9 dígitos" />
+        }
+        }
+    </app-form-field>
+
     @if (submitted() && !canPay()) {
     <app-error-message text="Añade alguna pizza al pedido" />
     }
