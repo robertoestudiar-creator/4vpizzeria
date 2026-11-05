@@ -1,6 +1,6 @@
 <div class="search-bar">
     <div class="input-group mb-3">
-        <input type="text" class="form-control border-end-0 shadow-none" placeholder="Busca tu producto" aria-label="Buscar pizza">
-        <app-search-button label="Buscar"></app-search-button>
+        <input #field [id]="inputId()" [type]="type()" class="form-control border-end-0 shadow-none" [placeholder]="placeholder()" aria-label="Buscar producto" (keyup.enter)="onSearch(field.value)">
+        <app-search-button label="Buscar" (clicked)="onSearch(field.value)"></app-search-button>
     </div>
 </div>

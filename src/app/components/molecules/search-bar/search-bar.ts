@@ -1,14 +1,19 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import {SearchButton} from '../../atoms/buttons/search-button/search-button';
 
 @Component({
   selector: 'app-search-bar',
-  imports: [SearchButton], 
+  imports: [SearchButton],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.scss',
 })
 export class SearchBar {
   inputId = input<string>('search');
   type = input<string>('text');
-  value = model<string>('');
-} 
+  placeholder = input<string>('Busca tu producto');
+  search = output<string>();
+
+  protected onSearch(term: string): void {
+    this.search.emit(term.trim());
+  }
+}
