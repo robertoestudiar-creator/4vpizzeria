@@ -1,0 +1,10 @@
+<fieldset class="payment-method-picker">
+    <legend class="form-label field-label">Método de pago</legend>
+    @for (option of methods; track option.id) {
+    <app-radio-option [inputId]="'payment-' + option.id" name="payment-method" [label]="option.label"
+        [checked]="method() === option.id" (selected)="selectMethod(option.id)" />
+    }
+    @if (error()) {
+    <app-error-message [text]="error()" />
+    }
+</fieldset>

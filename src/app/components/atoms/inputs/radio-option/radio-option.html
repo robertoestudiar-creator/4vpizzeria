@@ -1,0 +1,5 @@
+<div class="form-check form-check-inline">
+  <input class="form-check-input radio-option" type="radio" [id]="inputId()" [name]="name()" [checked]="checked()"
+    (change)="onChange()" />
+  <label class="form-check-label radio-label" [for]="inputId()">{{ label() }}</label>
+</div>
