@@ -1,5 +1,5 @@
 import { Component, input, output, signal } from '@angular/core';
-import { BUTTON_LOCK_MS } from '../button-lock';
+import { runLocked } from '../button-lock';
 
 @Component({
   selector: 'app-stepper-button',
@@ -14,11 +14,6 @@ export class StepperButton {
   protected readonly locked = signal(false);
 
   onClick(): void {
-    if (this.locked()) {
-      return;
-    }
-    this.locked.set(true);
-    this.clicked.emit();
-    setTimeout(() => this.locked.set(false), BUTTON_LOCK_MS);
+    runLocked(this.locked, () => this.clicked.emit());
   }
 }
