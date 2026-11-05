@@ -13,11 +13,16 @@ import { CartService } from '../../../services/cart-service';
 })
 export class MenuPage {
   protected activeCategory = signal<Category>('pizza');
+  protected ingredient = signal('');
 
   constructor(protected cartService: CartService) {}
 
   protected selectCategory(category: Category): void {
     this.activeCategory.set(category);
+  }
+
+  protected searchIngredient(ingredient: string): void {
+    this.ingredient.set(ingredient);
   }
 
   protected addToCart(line: CartLine): void {

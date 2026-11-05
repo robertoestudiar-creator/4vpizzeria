@@ -14,3 +14,17 @@
     text-decoration: underline;
   }
 }
+
+$navbar-search-width: 260px;
+$navbar-search-gap: 0.5rem;
+$navbar-expand-breakpoint: 992px;
+
+.navbar-search {
+  display: block;
+  padding-bottom: $navbar-search-gap;
+
+  @media (min-width: $navbar-expand-breakpoint) {
+    width: $navbar-search-width;
+    padding-bottom: 0;
+  }
+}

@@ -1,2 +1,3 @@
-<app-navbar [activeCategory]="activeCategory()" [cartCount]="cartService.count()" (categorySelected)="selectCategory($event)" />
-<app-product-grid [category]="activeCategory()" (productAdded)="addToCart($event)" />
+<app-navbar [activeCategory]="activeCategory()" [cartCount]="cartService.count()"
+    (categorySelected)="selectCategory($event)" (ingredientSearch)="searchIngredient($event)" />
+<app-product-grid [category]="activeCategory()" [ingredient]="ingredient()" (productAdded)="addToCart($event)" />

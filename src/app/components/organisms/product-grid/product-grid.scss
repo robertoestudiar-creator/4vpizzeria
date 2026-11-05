@@ -1,0 +1,7 @@
+@use 'main' as *;
+
+.no-results {
+  font-family: $primary-font;
+  font-weight: bold;
+  color: $light-color;
+}

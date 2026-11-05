@@ -10,7 +10,7 @@ import {SearchButton} from '../../atoms/buttons/search-button/search-button';
 export class SearchBar {
   inputId = input<string>('search');
   type = input<string>('text');
-  placeholder = input<string>('Busca tu producto');
+  placeholder = input<string>('Busca por ingrediente');
   search = output<string>();
 
   protected onSearch(term: string): void {

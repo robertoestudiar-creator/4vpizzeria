@@ -1,11 +1,10 @@
 <div class="product-grid container py-5">
-
-    <div class="col-12 col-md-8 col-lg-6 mx-auto">
-        <app-search-bar (search)="onSearch($event)" />
-    </div>
     <div class="row g-4 align-items-center">
         @for (product of visibleProducts(); track product.name) {
         <app-product-card class="col-12 col-md-6 col-lg-4" [product]="product" (added)="onAdded($event)" />
+        }
+        @if (visibleProducts().length === 0) {
+        <p class="col-12 text-center no-results">No hay productos con ese ingrediente</p>
         }
     </div>
 </div>
