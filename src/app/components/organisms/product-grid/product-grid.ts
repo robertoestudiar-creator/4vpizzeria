@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { ProductCard } from '../../molecules/product-card/product-card';
 import { SearchBar } from '../../molecules/search-bar/search-bar';
 import { Category, Product } from '../../../models/product';
@@ -113,8 +113,17 @@ export class ProductGrid {
   ];
 
   category = input.required<Category>();
+  protected searchTerm = signal('');
 
   protected visibleProducts = computed(() =>
-    this.products.filter((product) => product.category === this.category()),
+    this.products.filter(
+      (product) =>
+        product.category === this.category() &&
+        product.name.toLowerCase().includes(this.searchTerm().toLowerCase()),
+    ),
   );
+
+  protected onSearch(term: string): void {
+    this.searchTerm.set(term);
+  }
 }
