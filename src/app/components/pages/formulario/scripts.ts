@@ -1,12 +1,12 @@
 import { Component, signal, viewChild } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Navbar } from '../../organisms/navbar/navbar';
 import { OrderSummary } from '../../organisms/order-summary/order-summary';
 import { DeliveryForm } from '../../organisms/delivery-form/delivery-form';
 import { CartService } from '../../../services/cart-service';
 
 @Component({
   selector: 'app-formulario-page',
-  imports: [RouterLink, OrderSummary, DeliveryForm],
+  imports: [Navbar, OrderSummary, DeliveryForm],
   templateUrl: './index.html',
   styleUrl: './styles.scss',
 })

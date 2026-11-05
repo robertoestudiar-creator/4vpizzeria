@@ -1,1 +1,16 @@
 @use 'main' as *;
+
+.page-tab {
+  font-family: $primary-font;
+  color: $light-color-dark;
+
+  &:hover,
+  &.active {
+    color: $light-color;
+  }
+
+  &.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
