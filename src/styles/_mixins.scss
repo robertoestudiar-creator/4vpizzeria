@@ -12,3 +12,10 @@
     animation: button-press $button-press-duration ease;
   }
 }
+
+@mixin section-title {
+  font-family: $primary-font;
+  font-size: $section-title-size;
+  font-weight: bold;
+  margin: 0;
+}

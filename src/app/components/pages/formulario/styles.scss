@@ -1,11 +1,9 @@
 @use 'main' as *;
 
-$formulario-gap: 1rem;
-
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: $formulario-gap;
+  gap: $section-gap;
 }
 
 .thanks {
