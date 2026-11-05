@@ -1,2 +1,2 @@
-<input #field class="form-control text-input" [id]="inputId()" [type]="type()" [value]="value()"
-  (input)="value.set(field.value)" />
+<input class="form-control text-input" [class.is-invalid]="invalid()" [id]="inputId()" [type]="type()"
+  [formControl]="control()" />

@@ -1,12 +1,15 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
+  imports: [ReactiveFormsModule],
   templateUrl: './text-input.html',
   styleUrl: './text-input.scss',
 })
 export class TextInput {
   inputId = input.required<string>();
   type = input<string>('text');
-  value = model<string>('');
+  control = input.required<FormControl<string>>();
+  invalid = input<boolean>(false);
 }

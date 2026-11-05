@@ -1,0 +1,21 @@
+@use 'main' as *;
+
+$delivery-form-padding: 20px;
+$delivery-form-gap: 1rem;
+$delivery-form-title-size: 1.5rem;
+
+.delivery-form {
+  border-radius: $radius-card;
+  border-width: 0px;
+  padding: $delivery-form-padding;
+  display: flex;
+  flex-direction: column;
+  gap: $delivery-form-gap;
+}
+
+.delivery-form-title {
+  font-family: $primary-font;
+  font-size: $delivery-form-title-size;
+  font-weight: bold;
+  margin: 0;
+}

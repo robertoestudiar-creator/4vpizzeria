@@ -1,0 +1,17 @@
+<form class="card delivery-form" [formGroup]="form" (ngSubmit)="pay()" novalidate>
+    <h2 class="delivery-form-title">Datos de entrega</h2>
+    <app-form-field label="Hora de entrega" inputId="time" type="time" [control]="form.controls.time"
+        [error]="errorFor('time')" />
+    <app-form-field label="Dirección completa" inputId="address" [control]="form.controls.address"
+        [error]="errorFor('address')" />
+    <app-payment-method-picker [method]="form.controls.paymentMethod.value" [error]="errorFor('paymentMethod')"
+        (methodChange)="selectMethod($event)" />
+    <app-form-field label="Número de tarjeta" inputId="card" [control]="form.controls.card"
+        [error]="errorFor('card')" />
+    <app-form-field label="Móvil" inputId="phone" type="tel" [control]="form.controls.phone"
+        [error]="errorFor('phone')" />
+    @if (submitted() && !canPay()) {
+    <app-error-message text="Añade alguna pizza al pedido" />
+    }
+    <app-card-button label="Pagar" (clicked)="pay()" />
+</form>

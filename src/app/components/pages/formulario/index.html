@@ -1,0 +1,14 @@
+<main class="container py-5 formulario">
+    <a routerLink="/" class="btn btn-light back-link">Volver a la carta</a>
+    @if (thanks()) {
+    <div class="alert alert-success thanks" role="status">¡Gracias por tu pedido!</div>
+    }
+    <div class="row g-4">
+        <div class="col-12 col-lg-6">
+            <app-order-summary [items]="items()" />
+        </div>
+        <div class="col-12 col-lg-6">
+            <app-delivery-form [canPay]="items().length > 0" (paid)="onPaid()" />
+        </div>
+    </div>
+</main>

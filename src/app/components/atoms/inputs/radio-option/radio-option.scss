@@ -1,0 +1,17 @@
+@use 'main' as *;
+
+.radio-option {
+  &:checked {
+    background-color: $brand-color;
+    border-color: $brand-color;
+  }
+
+  &:focus {
+    border-color: $brand-color;
+    box-shadow: none;
+  }
+}
+
+.radio-label {
+  font-family: $primary-font;
+}
