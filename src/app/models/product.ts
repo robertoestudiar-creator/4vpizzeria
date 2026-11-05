@@ -1,4 +1,12 @@
-export type Category = 'pizza' | 'drink' | 'dessert'|'offers'|'news';
+export const CATEGORIES = [
+    { id: 'pizza', label: 'Pizzas' },
+    { id: 'drink', label: 'Bebidas' },
+    { id: 'dessert', label: 'Postres' },
+    { id: 'offers', label: 'Ofertas' },
+    { id: 'news', label: 'Novedades' },
+] as const;
+
+export type Category = (typeof CATEGORIES)[number]['id'];
 
 export class Product {
 
