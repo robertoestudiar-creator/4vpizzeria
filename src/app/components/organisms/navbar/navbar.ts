@@ -1,12 +1,12 @@
 import { Component, input, output } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { NavbarButton } from '../../atoms/buttons/navbar-button/navbar-button';
 import { CartButton } from '../../molecules/cart-button/cart-button';
 import { SearchBar } from '../../molecules/search-bar/search-bar';
 import { CATEGORIES, Category } from '../../../models/product';
 
 @Component({
-  imports: [RouterLink, RouterLinkActive, NavbarButton, CartButton, SearchBar],
+  imports: [RouterLink, NavbarButton, CartButton, SearchBar],
   selector: 'app-navbar',
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
