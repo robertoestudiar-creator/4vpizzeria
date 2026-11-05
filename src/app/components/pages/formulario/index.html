@@ -1,5 +1,5 @@
+<app-navbar [showFilters]="false" [cartCount]="cartService.count()" />
 <main class="container py-5 formulario">
-    <a routerLink="/" class="btn btn-light back-link">Volver a la carta</a>
     @if (thanks()) {
     <div class="alert alert-success thanks" role="status">¡Gracias por tu pedido!</div>
     }

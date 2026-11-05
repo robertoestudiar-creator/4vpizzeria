@@ -1,4 +1,4 @@
-export type Category = 'pizza' | 'drink' | 'dessert' | 'offers' | 'news';
+export type Category = 'pizza' | 'drink' | 'dessert' | 'news';
 
 export class CategoryOption {
 
@@ -15,7 +15,6 @@ export const CATEGORIES: CategoryOption[] = [
     new CategoryOption('pizza', 'Pizzas'),
     new CategoryOption('drink', 'Bebidas'),
     new CategoryOption('dessert', 'Postres'),
-    new CategoryOption('offers', 'Ofertas'),
     new CategoryOption('news', 'Novedades'),
 ];
 
