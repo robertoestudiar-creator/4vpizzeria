@@ -1,4 +1,3 @@
-@use 'bootstrap/scss/bootstrap';
 @use 'main' as *;
 
 $product-card-height: 400px;
@@ -10,7 +9,6 @@ $product-card-padding: 10px;
 }
 
 .product-card {
-    @extend .card;
     border-radius: $radius-card;
     overflow: hidden;
     border-width:0px;

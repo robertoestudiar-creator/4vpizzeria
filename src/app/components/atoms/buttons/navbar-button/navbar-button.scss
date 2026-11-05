@@ -1,11 +1,8 @@
-@use 'bootstrap/scss/bootstrap';
 @use 'main' as *;
 
 @include button-press-keyframes;
 
 .navbar-button {
-  @extend .btn;
-  @extend .btn-primary;
   @include pill-button;
 
   color: $brand-color;

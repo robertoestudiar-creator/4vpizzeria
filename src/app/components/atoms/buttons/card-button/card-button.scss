@@ -1,11 +1,8 @@
-@use 'bootstrap/scss/bootstrap';
 @use 'main' as *;
 
 @include button-press-keyframes;
 
 .card-button {
-  @extend .btn;
-  @extend .btn-primary;
   @include pill-button;
 
   width: 100%;
