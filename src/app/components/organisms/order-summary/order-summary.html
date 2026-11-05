@@ -2,8 +2,11 @@
     <h2 class="order-summary-title">Tu pedido</h2>
     <div #list class="list-group order-summary-list" tabindex="-1" aria-label="Pizzas del pedido">
         @for (product of items(); track $index) {
-        <app-order-line [product]="product" />
-        } @empty {
+        <div class="list-group-item">
+            <app-order-line [product]="product" />
+        </div>
+        }
+        @if (items().length === 0) {
         <p class="order-summary-empty">No hay pizzas en el pedido</p>
         }
     </div>
