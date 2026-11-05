@@ -1,12 +1,23 @@
-export const CATEGORIES = [
-    { id: 'pizza', label: 'Pizzas' },
-    { id: 'drink', label: 'Bebidas' },
-    { id: 'dessert', label: 'Postres' },
-    { id: 'offers', label: 'Ofertas' },
-    { id: 'news', label: 'Novedades' },
-] as const;
+export type Category = 'pizza' | 'drink' | 'dessert' | 'offers' | 'news';
 
-export type Category = (typeof CATEGORIES)[number]['id'];
+export class CategoryOption {
+
+    public id: Category;
+    public label: string;
+
+    constructor(id: Category, label: string) {
+        this.id = id;
+        this.label = label;
+    }
+}
+
+export const CATEGORIES: CategoryOption[] = [
+    new CategoryOption('pizza', 'Pizzas'),
+    new CategoryOption('drink', 'Bebidas'),
+    new CategoryOption('dessert', 'Postres'),
+    new CategoryOption('offers', 'Ofertas'),
+    new CategoryOption('news', 'Novedades'),
+];
 
 export class Product {
 

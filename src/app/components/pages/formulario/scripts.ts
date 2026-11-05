@@ -1,4 +1,4 @@
-import { Component, inject, signal, viewChild } from '@angular/core';
+import { Component, OnInit, signal, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { OrderSummary } from '../../organisms/order-summary/order-summary';
 import { DeliveryForm } from '../../organisms/delivery-form/delivery-form';
@@ -11,12 +11,17 @@ import { ProductRepository } from '../../../repositories/product-repository';
   templateUrl: './index.html',
   styleUrl: './styles.scss',
 })
-export class FormularioPage {
-  private readonly productRepository = inject(ProductRepository);
+export class FormularioPage implements OnInit {
   private readonly summary = viewChild.required(OrderSummary);
 
-  protected readonly items = signal<Product[]>(this.productRepository.findByCategory('pizza'));
+  protected readonly items = signal<Product[]>([]);
   protected readonly thanks = signal(false);
+
+  constructor(private productRepository: ProductRepository) {}
+
+  ngOnInit(): void {
+    this.items.set(this.productRepository.findByCategory('pizza'));
+  }
 
   protected onPaid(): void {
     this.items.set([]);

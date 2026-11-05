@@ -1,6 +1,17 @@
-export const PAYMENT_METHODS = [
-    { id: 'card', label: 'Tarjeta' },
-    { id: 'bizum', label: 'Bizum' },
-] as const;
+export type PaymentMethod = 'card' | 'bizum';
 
-export type PaymentMethod = (typeof PAYMENT_METHODS)[number]['id'];
+export class PaymentOption {
+
+    public id: PaymentMethod;
+    public label: string;
+
+    constructor(id: PaymentMethod, label: string) {
+        this.id = id;
+        this.label = label;
+    }
+}
+
+export const PAYMENT_METHODS: PaymentOption[] = [
+    new PaymentOption('card', 'Tarjeta'),
+    new PaymentOption('bizum', 'Bizum'),
+];

@@ -10,14 +10,6 @@ const TIME_PATTERN = /^([01]\d|2[0-3]):[0-5]\d$/;
 const CARD_PATTERN = /^\d{16}$/;
 const PHONE_PATTERN = /^\d{9}$/;
 
-const ERROR_MESSAGES = {
-  time: 'Introduce una hora válida (HH:MM)',
-  address: 'Introduce la dirección completa',
-  paymentMethod: 'Elige un método de pago',
-  card: 'La tarjeta tiene que tener 16 dígitos',
-  phone: 'El móvil tiene que tener 9 dígitos',
-};
-
 @Component({
   selector: 'app-delivery-form',
   imports: [ReactiveFormsModule, FormField, PaymentMethodPicker, CardButton, ErrorMessage],
@@ -46,32 +38,47 @@ export class DeliveryForm {
   });
   protected readonly submitted = signal(false);
 
-  protected errorFor(name: keyof typeof ERROR_MESSAGES): string {
-    const control = this.form.controls[name];
-    return control.invalid && (control.touched || this.submitted()) ? ERROR_MESSAGES[name] : '';
+  get time() {
+    return this.form.controls.time;
+  }
+
+  get address() {
+    return this.form.controls.address;
+  }
+
+  get paymentMethod() {
+    return this.form.controls.paymentMethod;
+  }
+
+  get card() {
+    return this.form.controls.card;
+  }
+
+  get phone() {
+    return this.form.controls.phone;
   }
 
   protected selectMethod(method: PaymentMethod): void {
-    const { paymentMethod, card, phone } = this.form.controls;
-    paymentMethod.setValue(method);
+    this.paymentMethod.setValue(method);
     if (method === 'card') {
-      card.enable();
-      phone.disable();
+      this.card.enable();
+      this.phone.disable();
     } else {
-      phone.enable();
-      card.disable();
+      this.phone.enable();
+      this.card.disable();
     }
   }
 
   protected pay(): void {
     this.submitted.set(true);
+    this.form.markAllAsTouched();
     if (this.form.invalid || !this.canPay()) {
       return;
     }
     this.paid.emit();
     this.form.reset();
-    this.form.controls.card.disable();
-    this.form.controls.phone.disable();
+    this.card.disable();
+    this.phone.disable();
     this.submitted.set(false);
   }
 }
