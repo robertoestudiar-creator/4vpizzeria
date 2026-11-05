@@ -1,0 +1,16 @@
+@use 'main' as *;
+
+.cart-button {
+  color: $light-color;
+  border: none;
+
+  &:hover {
+    color: $light-color-dark;
+  }
+}
+
+.cart-badge {
+  font-family: $primary-font;
+  color: $brand-color;
+  background-color: $light-color;
+}
