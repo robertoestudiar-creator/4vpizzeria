@@ -1,0 +1,5 @@
+<div class="input-group quantity-selector">
+    <app-stepper-button label="−" ariaLabel="Quitar uno" [disabled]="quantity() <= min" (clicked)="decrease()" />
+    <app-quantity-input [value]="quantity()" (valueChange)="setQuantity($event)" />
+    <app-stepper-button label="+" ariaLabel="Añadir uno" [disabled]="quantity() >= max" (clicked)="increase()" />
+</div>

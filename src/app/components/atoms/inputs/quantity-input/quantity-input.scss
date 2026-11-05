@@ -1,0 +1,25 @@
+@use 'main' as *;
+
+:host {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.quantity-input {
+  border-radius: 0;
+  border-color: $brand-color;
+  font-family: $primary-font;
+  font-weight: bold;
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    border-color: $brand-color;
+    box-shadow: none;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Product } from '../../../models/product';
+import { CartLine } from '../../../models/cart';
 
 @Component({
   selector: 'app-order-line',
@@ -7,5 +7,5 @@ import { Product } from '../../../models/product';
   styleUrl: './order-line.scss',
 })
 export class OrderLine {
-  product = input.required<Product>();
+  line = input.required<CartLine>();
 }

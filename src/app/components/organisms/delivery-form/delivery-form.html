@@ -55,7 +55,7 @@
     </app-form-field>
 
     @if (submitted() && !canPay()) {
-    <app-error-message text="Añade alguna pizza al pedido" />
+    <app-error-message text="Añade algún producto al pedido" />
     }
     <app-card-button label="Pagar" (clicked)="pay()" />
 </form>

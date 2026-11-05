@@ -1,0 +1,11 @@
+@use 'main' as *;
+
+:host {
+  display: block;
+}
+
+.quantity-selector {
+  flex-wrap: nowrap;
+  border-radius: $radius-pill;
+  overflow: hidden;
+}

@@ -1,6 +1,6 @@
 import { Component, ElementRef, computed, input, viewChild } from '@angular/core';
 import { OrderLine } from '../../molecules/order-line/order-line';
-import { Product } from '../../../models/product';
+import { CartLine } from '../../../models/cart';
 
 @Component({
   selector: 'app-order-summary',
@@ -9,8 +9,10 @@ import { Product } from '../../../models/product';
   styleUrl: './order-summary.scss',
 })
 export class OrderSummary {
-  items = input.required<Product[]>();
-  protected total = computed(() => this.items().reduce((sum, product) => sum + product.price, 0));
+  lines = input.required<CartLine[]>();
+  protected total = computed(() =>
+    this.lines().reduce((sum, line) => sum + line.product.price * line.quantity, 0),
+  );
   private readonly list = viewChild.required<ElementRef<HTMLElement>>('list');
 
   focus(): void {

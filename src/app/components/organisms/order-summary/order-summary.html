@@ -1,13 +1,13 @@
 <section class="card order-summary">
     <h2 class="order-summary-title">Tu pedido</h2>
-    <div #list class="list-group order-summary-list" tabindex="-1" aria-label="Pizzas del pedido">
-        @for (product of items(); track $index) {
+    <div #list class="list-group order-summary-list" tabindex="-1" aria-label="Productos del pedido">
+        @for (line of lines(); track line.product.name) {
         <div class="list-group-item">
-            <app-order-line [product]="product" />
+            <app-order-line [line]="line" />
         </div>
         }
-        @if (items().length === 0) {
-        <p class="order-summary-empty">No hay pizzas en el pedido</p>
+        @if (lines().length === 0) {
+        <p class="order-summary-empty">No hay productos en el pedido</p>
         }
     </div>
     <p class="order-summary-total">Total: {{ total() }} €</p>
