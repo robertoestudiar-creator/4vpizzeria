@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { CardButton } from '../../atoms/buttons/card-button/card-button';
 import { FormField } from '../../molecules/form-field/form-field';
 
@@ -9,11 +10,13 @@ import { FormField } from '../../molecules/form-field/form-field';
   styleUrl: './order-form.scss',
 })
 export class OrderForm {
-  protected name = signal('');
-  protected phone = signal('');
-  protected address = signal('');
+  protected readonly form = new FormGroup({
+    name: new FormControl('', { nonNullable: true }),
+    phone: new FormControl('', { nonNullable: true }),
+    address: new FormControl('', { nonNullable: true }),
+  });
 
   protected submit(): void {
-    console.log('Pedido:', this.name(), this.phone(), this.address());
+    console.log('Pedido:', this.form.getRawValue());
   }
 }

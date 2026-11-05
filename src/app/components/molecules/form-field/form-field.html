@@ -1,4 +1,7 @@
 <div class="form-field">
     <label class="form-label field-label" [for]="inputId()">{{ label() }}</label>
-    <app-text-input [inputId]="inputId()" [type]="type()" [(value)]="value" />
+    <app-text-input [inputId]="inputId()" [type]="type()" [control]="control()" [invalid]="error() !== ''" />
+    @if (error()) {
+    <app-error-message [text]="error()" />
+    }
 </div>
