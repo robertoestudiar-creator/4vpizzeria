@@ -8,16 +8,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <div class="navbar-nav mx-auto align-items-center gap-4 py-2 py-lg-0">
-                    <app-navbar-button label="Pizzas" [active]="activeCategory() === 'pizza'"
-                        (clicked)="selectCategory('pizza')" />
-                    <app-navbar-button label="Bebidas" [active]="activeCategory() === 'drink'"
-                        (clicked)="selectCategory('drink')" />
-                    <app-navbar-button label="Postres" [active]="activeCategory() === 'dessert'"
-                        (clicked)="selectCategory('dessert')" />
-                    <app-navbar-button label="Ofertas" [active]="activeCategory() === 'offers'"
-                        (clicked)="selectCategory('offers')" />
-                    <app-navbar-button label="Novedades" [active]="activeCategory() === 'news'"
-                        (clicked)="selectCategory('news')" />
+                    @for (category of categories; track category.id) {
+                    <app-navbar-button [label]="category.label" [active]="activeCategory() === category.id"
+                        (clicked)="selectCategory(category.id)" />
+                    }
                 </div>
             </div>
         </div>

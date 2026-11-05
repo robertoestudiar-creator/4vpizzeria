@@ -1,4 +1,6 @@
-@use 'variables' as *;
+@use 'main' as *;
+
+$product-card-title-size: 1.25rem;
 
 :host {
   display: block;
@@ -6,9 +8,7 @@
 
 .product-card-title {
   font-family: $primary-font;
-  font-size: 1.25rem;
+  font-size: $product-card-title-size;
   font-weight: bold;
   margin: 0;
 }
-
-

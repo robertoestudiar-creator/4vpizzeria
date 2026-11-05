@@ -7,7 +7,6 @@ import { Component, input, output } from '@angular/core';
 })
 export class CardButton {
   label = input.required<string>();
-  color = input<string>('#d62828');
   clicked = output<void>();
 
   onClick(): void {

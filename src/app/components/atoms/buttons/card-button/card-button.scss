@@ -1,25 +1,14 @@
-@use 'bootstrap/scss/bootstrap';
-@use 'variables' as *;
-@use 'sass:color';
+@use 'main' as *;
+
+@include button-press-keyframes;
 
 .card-button {
-  @extend .btn;
-  @extend .btn-primary;
+  @include pill-button;
 
-  font-family: $primary-font;
-  border-radius: 10mm;
   width: 100%;
   background-color: $brand-color;
-  border: none;
 
   &:hover {
-    background-color: color.adjust($brand-color, $lightness: -10%);
+    background-color: $brand-color-dark;
   }
-
-  &:active {
-    animation: button-press $button-press-duration ease;
-  }
-
-  --bs-btn-active-bg: #{$brand-color};
-  --bs-btn-hover-border-color: #{$brand-color};
 }

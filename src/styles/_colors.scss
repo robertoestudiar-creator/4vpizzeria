@@ -1,0 +1,10 @@
+@use 'sass:color';
+
+$brand-color: #FF0000;
+$brand-color-dark: color.adjust($brand-color, $lightness: -10%);
+$brand-color-darker: color.adjust($brand-color, $lightness: -20%);
+$brand-color-darkest: color.adjust($brand-color, $lightness: -30%);
+
+$light-color: #FFFFFF;
+$light-color-dark: color.adjust($light-color, $lightness: -20%);
+$light-color-darker: color.adjust($light-color, $lightness: -30%);

@@ -1,32 +1,24 @@
-@use 'bootstrap/scss/bootstrap';
-@use 'variables' as *;
-@use 'sass:color';
+@use 'main' as *;
+
+@include button-press-keyframes;
 
 .navbar-button {
-  @extend .btn;
-  @extend .btn-primary;
+  @include pill-button;
 
-  color: red;
-  font-family: $primary-font;
-  border-radius: 10mm;
-  background-color: white;
-  border: none;
+  color: $brand-color;
+  background-color: $light-color;
 
   &:hover {
-    background-color: color.adjust($brand-color, $lightness: -20%);
+    background-color: $brand-color-darker;
   }
 
   &:active {
-    animation: button-press $button-press-duration ease;
-    background-color: color.adjust($brand-color, $lightness: -10%);
+    background-color: $brand-color-dark;
   }
 
   &.is-active,
   &.is-active:hover {
-    background-color: color.adjust($brand-color, $lightness: -10%);
-    color: white;
+    background-color: $brand-color-dark;
+    color: $light-color;
   }
-
-  --bs-btn-active-bg: #{$brand-color};
-  --bs-btn-hover-border-color: #{$brand-color};
 }

@@ -1,8 +1,8 @@
-@use 'variables' as *;
+@use 'main' as *;
 
 .text-input {
   font-family: $primary-font;
-  border-radius: 10mm;
+  border-radius: $radius-pill;
 
   &:focus {
     border-color: $brand-color;
