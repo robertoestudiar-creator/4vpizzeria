@@ -1,0 +1,14 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+@mixin pill-button {
+  font-family: $primary-font;
+  border-radius: $radius-pill;
+  border: none;
+  --bs-btn-active-bg: #{$brand-color};
+  --bs-btn-hover-border-color: #{$brand-color};
+
+  &:active {
+    animation: button-press $button-press-duration ease;
+  }
+}

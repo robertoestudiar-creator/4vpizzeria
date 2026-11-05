@@ -1,7 +1,9 @@
 @use 'variables' as *;
 
-@keyframes button-press {
-  0%   { transform: scale($button-scale-default); }
-  50%  { transform: scale($button-scale-pressed); }
-  100% { transform: scale($button-scale-default); }
+@mixin button-press-keyframes {
+  @keyframes button-press {
+    0%   { transform: scale($button-scale-default); }
+    50%  { transform: scale($button-scale-pressed); }
+    100% { transform: scale($button-scale-default); }
+  }
 }
