@@ -1,5 +1,9 @@
-@use 'variables' as *;
 @use 'bootstrap/scss/bootstrap';
+@use 'main' as *;
+
+$product-card-height: 400px;
+$product-card-rows: 3fr 2fr;
+$product-card-padding: 10px;
 
 :host {
   display: block;
@@ -7,12 +11,12 @@
 
 .product-card {
     @extend .card;
-    border-radius: 4mm;
+    border-radius: $radius-card;
     overflow: hidden;
     border-width:0px;
     display: grid;
-    grid-template-rows: 3fr 2fr;   // 3 partes para la imagen, 2 para el resto
-    height: 400px;                 // la tarjeta necesita una altura que repartir
+    grid-template-rows: $product-card-rows;   // 3 partes para la imagen, 2 para el resto
+    height: $product-card-height;                 // la tarjeta necesita una altura que repartir
     img {
         width: 100%;
         height: 100%;
@@ -21,7 +25,7 @@
     }
 
     .content {
-        padding: 10px;
+        padding: $product-card-padding;
         display: flex;
         flex-direction: column;
         justify-content: space-between;   // texto arriba, botón abajo

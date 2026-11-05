@@ -1,4 +1,6 @@
 @use 'bootstrap/scss/bootstrap';
+@use 'main' as *;
+
 body{
-    background-color: red;
-} 
+    background-color: $brand-color;
+}
