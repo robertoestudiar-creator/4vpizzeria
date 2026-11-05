@@ -8,6 +8,9 @@
             }
             <p class="price">{{ product().price }} €</p>
         </div>
-        <app-card-button label="Añadir al pedido" (clicked)="addToOrder()" />
+        <div class="actions">
+            <app-quantity-selector [quantity]="quantity()" (quantityChange)="changeQuantity($event)" />
+            <app-card-button label="Añadir al pedido" (clicked)="addToOrder()" />
+        </div>
     </div>
 </section>

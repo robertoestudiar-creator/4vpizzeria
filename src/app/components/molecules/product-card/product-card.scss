@@ -1,8 +1,9 @@
 @use 'main' as *;
 
-$product-card-height: 400px;
+$product-card-height: 460px;
 $product-card-rows: 3fr 2fr;
 $product-card-padding: 10px;
+$product-card-actions-gap: 8px;
 
 :host {
   display: block;
@@ -27,6 +28,12 @@ $product-card-padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;   // texto arriba, botón abajo
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: $product-card-actions-gap;
     }
 
     .ingredients,
