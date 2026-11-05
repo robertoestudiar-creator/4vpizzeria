@@ -1,18 +1,17 @@
 @use 'bootstrap/scss/bootstrap';
-@use 'variables' as *;
-@use 'sass:color';
+@use 'main' as *;
+
+$search-button-width: 45px;
 
 :host {
   display: flex;
 }
 
 .search-button {
-
   display: inline-flex;
   justify-content: center;
-  width: 45px;
-  display: inline-flex;
   align-items: center;
+  width: $search-button-width;
   color: $brand-color;
   background-color: var(--bs-body-bg);
   border: var(--bs-border-width) solid var(--bs-border-color);
@@ -20,13 +19,12 @@
   border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
 
   &:hover {
-    background-color: color.adjust(white, $lightness: -20%);
-    color: color.adjust($brand-color, $lightness: -20%);
+    background-color: $light-color-dark;
+    color: $brand-color-darker;
   }
 
-  &:active{ 
-    background-color: color.adjust(white, $lightness: -30%);
-    color: color.adjust($brand-color, $lightness: -30%);
-
+  &:active {
+    background-color: $light-color-darker;
+    color: $brand-color-darkest;
   }
 }
