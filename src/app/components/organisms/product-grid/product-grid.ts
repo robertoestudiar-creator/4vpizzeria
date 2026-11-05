@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { ProductCard } from '../../molecules/product-card/product-card';
 import { SearchBar } from '../../molecules/search-bar/search-bar';
 import { Category } from '../../../models/product';
@@ -12,7 +12,7 @@ import { ProductRepository } from '../../../repositories/product-repository';
 })
 
 export class ProductGrid {
-  private readonly productRepository = inject(ProductRepository);
+  constructor(private productRepository: ProductRepository) {}
 
   category = input.required<Category>();
   protected searchTerm = signal('');
