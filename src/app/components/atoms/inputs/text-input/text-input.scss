@@ -1,7 +1,6 @@
 @use 'main' as *;
 
 .text-input {
-  font-family: $primary-font;
   border-radius: $radius-pill;
 
   &:focus {

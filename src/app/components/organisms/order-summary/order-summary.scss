@@ -1,22 +1,16 @@
 @use 'main' as *;
 
-$order-summary-padding: 20px;
-$order-summary-gap: 1rem;
-$order-summary-title-size: 1.5rem;
 $order-summary-focus-width: 2px;
 
 .order-summary {
   border-radius: $radius-card;
   border-width: 0px;
-  padding: $order-summary-padding;
-  gap: $order-summary-gap;
+  padding: $card-padding;
+  gap: $section-gap;
 }
 
 .order-summary-title {
-  font-family: $primary-font;
-  font-size: $order-summary-title-size;
-  font-weight: bold;
-  margin: 0;
+  @include section-title;
 }
 
 .order-summary-list:focus {
@@ -24,12 +18,10 @@ $order-summary-focus-width: 2px;
 }
 
 .order-summary-empty {
-  font-family: $primary-font;
   margin: 0;
 }
 
 .order-summary-total {
-  font-family: $primary-font;
   font-weight: bold;
   text-align: right;
   margin: 0;
