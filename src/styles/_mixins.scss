@@ -2,7 +2,6 @@
 @use 'variables' as *;
 
 @mixin pill-button {
-  font-family: $primary-font;
   border-radius: $radius-pill;
   border: none;
   --bs-btn-active-bg: #{$brand-color};
@@ -14,7 +13,6 @@
 }
 
 @mixin section-title {
-  font-family: $primary-font;
   font-size: $section-title-size;
   font-weight: bold;
   margin: 0;
