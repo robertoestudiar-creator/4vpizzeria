@@ -1,0 +1,11 @@
+<section class="card order-summary">
+    <h2 class="order-summary-title">Tu pedido</h2>
+    <div #list class="list-group order-summary-list" tabindex="-1" aria-label="Pizzas del pedido">
+        @for (product of items(); track $index) {
+        <app-order-line [product]="product" />
+        } @empty {
+        <p class="order-summary-empty">No hay pizzas en el pedido</p>
+        }
+    </div>
+    <p class="order-summary-total">Total: {{ total() }} €</p>
+</section>
