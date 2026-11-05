@@ -5,10 +5,10 @@
     }
     <div class="row g-4">
         <div class="col-12 col-lg-6">
-            <app-order-summary [items]="items()" />
+            <app-order-summary [lines]="cartService.cartLines()" />
         </div>
         <div class="col-12 col-lg-6">
-            <app-delivery-form [canPay]="items().length > 0" (paid)="onPaid()" />
+            <app-delivery-form [canPay]="cartService.count() > 0" (paid)="onPaid()" />
         </div>
     </div>
 </main>

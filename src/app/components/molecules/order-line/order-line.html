@@ -1,4 +1,4 @@
 <div class="d-flex justify-content-between order-line">
-    <span class="order-line-name">{{ product().name }}</span>
-    <span class="order-line-price">{{ product().price }} €</span>
+    <span class="order-line-name">{{ line().quantity }} × {{ line().product.name }}</span>
+    <span class="order-line-price">{{ line().product.price * line().quantity }} €</span>
 </div>
