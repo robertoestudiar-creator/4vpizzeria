@@ -33,11 +33,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/app/components/assets",
-                "output": "assets"
               }
             ],
             "styles": [
